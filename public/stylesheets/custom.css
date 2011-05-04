@@ -1,3 +1,6 @@
+/**************************************
+* General Layout
+**************************************/
 .container {
 	width: 710px;
 }
@@ -27,7 +30,9 @@ section h1 {
 }
 
 
-/* Links */
+/*************************************** 
+* Links 
+***************************************/
 a {
 	color: #0099CC;
 	text-decoration: none;
@@ -78,7 +83,9 @@ nav ul li a:hover {
 	text-decoration: underline;
 }
 
-/* Footer */
+/***************************************
+* Footer
+***************************************/
 footer {
 	text-align: center;
 	margin-top: 10px;
@@ -91,7 +98,9 @@ footer nav {
 	float: none;
 }
 
-/* Sign up button */
+/***************************************
+* Sign up button
+***************************************/
 
 a.signup_button {
 	margin-left: auto;
@@ -106,14 +115,18 @@ a.signup_button {
 	padding: 20px;
 }
 
-/* Round corners */
+/***************************************
+* Round corners
+***************************************/
 .round {
 	-moz-border-radius: 10px;
 	-webkit-border-radius: 10px;
 	border-radius: 10px;
 }
 
-/* User show page */
+/***************************************
+* User show page
+***************************************/
 table.profile {
     width: 100%;
     marging-bottom: 0;
@@ -132,6 +145,54 @@ td.sidebar {
 }
 
 .profile img.gravatar {
-    border: 1px solid #999;
+    border: 1px solid #999999;
     margin-bottom: -15px;
+}
+
+div.field, div.actions {
+	margin-bottom: 10px;
+}
+
+/***************************************
+* Error message styles 
+***************************************/
+.field_with_errors {
+	margin-top: 10px;
+	padding: 2px;
+	background-color: red;
+	display: table;
+}
+
+.field_with_errors label {
+	color: #FFFFFF;
+}
+
+#error_explanation {
+  width: 400px;
+  border: 2px solid red;
+  padding: 7px;
+  padding-bottom: 12px;
+  margin-bottom: 20px;
+  background-color: #f0f0f0;
+}
+
+#error_explanation h2 {
+  text-align: left;
+  font-weight: bold;
+  padding: 5px 5px 5px 15px;
+  font-size: 12px;
+  margin: -7px;
+  background-color: #CC0000;
+  color: #FFFFFF;
+}
+
+#error_explanation p {
+  color: #333333;
+  margin-bottom: 0;
+  padding: 5px;
+}
+
+#error_explanation ul li {
+  font-size: 12px;
+  list-style: square;
 }
