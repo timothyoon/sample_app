@@ -77,7 +77,6 @@ describe User do
   ###############################################
   # Password tests
   ###############################################
-  
   describe "password validations" do
     
     it "should require a passwoord" do
@@ -105,7 +104,6 @@ describe User do
     ###############################################
     # Password encryption tests
     ###############################################
-    
     describe "password encryption" do
       
       before(:each) do
@@ -149,6 +147,30 @@ describe User do
           wrong_password_user.should == @user
         end
         
+      end
+      
+    end
+    
+    ###############################################
+    # Admin user tests
+    ###############################################
+    describe "admin attribute" do
+      
+      before(:each) do
+        @user = User.create!(@attr)
+      end
+      
+      it "should respond to admin" do
+        @user.should respond_to(:admin)
+      end
+      
+      it "should not be an admin by default" do
+        @user.should_not be_admin
+      end
+      
+      it "should be convertable to an admin" do
+        @user.toggle!(:admin)
+        @user.should be_admin
       end
       
     end
