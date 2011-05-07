@@ -1,13 +1,16 @@
 # == Schema Information
-# Schema version: 20110502004931
+# Schema version: 20110505233620
 #
 # Table name: users
 #
-#  id         :integer         not null, primary key
-#  name       :string(255)
-#  email      :string(255)
-#  created_at :datetime
-#  updated_at :datetime
+#  id                 :integer         not null, primary key
+#  name               :string(255)
+#  email              :string(255)
+#  created_at         :datetime
+#  updated_at         :datetime
+#  encrypted_password :string(255)
+#  salt               :string(255)
+#  admin              :boolean
 #
 
 class User < ActiveRecord::Base
@@ -18,6 +21,10 @@ class User < ActiveRecord::Base
                   :password,
                   :password_confirmation
   
+  ###############################################
+  # Associations
+  ###############################################
+  has_many :microposts, :dependent => :destroy
   
   ###############################################
   # Validation methods
@@ -61,6 +68,10 @@ class User < ActiveRecord::Base
   
   def has_password?(submitted_password)
     encrypted_password == encrypt(submitted_password)
+  end
+  
+  def feed
+    Micropost.where("user_id = ?", id)
   end
   
   ###############################################
