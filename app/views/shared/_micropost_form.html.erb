@@ -1,7 +1,23 @@
+<script>
+	$(function(){
+		$('#micropost_content_counter').textCounter({
+			target: '#micropost_content', // required: string
+			count: 140, // optional: integer [defaults 140]
+			alertAt: 30, // optional: integer [defaults 20]
+			warnAt: 15, // optional: integer [defaults 0]
+			stopAtLimit: true // optional: defaults to false
+		});
+	});
+</script>
 <%= form_for @micropost do |f| %>
   <%= render 'shared/error_messages', :object => f.object %>
   <div class="field">
     <%= f.text_area :content %>
+		<br/>
+		<div class="textCounter" style="padding-right:40px;">
+			<span id="micropost_content_counter"></span>
+			Characters remaining
+		</div>
   </div>
   <div class="actions">
     <%= f.submit "Submit" %>

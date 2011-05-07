@@ -266,3 +266,20 @@ form.new_micropost textarea {
   height: 4em;
   margin-bottom: 0;
 }
+
+
+/***************************************
+* Text area counter styles 
+***************************************/
+.tcAlert { 
+	color: orange;
+}
+
+.tcWarn {
+	color: red;
+}
+
+.textCounter {
+	font-size: 75%;
+	text-align: right;
+}
