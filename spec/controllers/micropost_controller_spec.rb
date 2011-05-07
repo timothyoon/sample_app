@@ -102,4 +102,19 @@ describe MicropostsController do
     end
   end
   
+  ###############################################
+  # Index Microposts Tests
+  ###############################################
+  describe "GET index" do
+    
+    describe "for non-signed-in users" do
+      # TODO
+      
+      #get :index, :user_id => "1"
+      #response.should redirect_to(signin_path)
+      #flash[:notice].should =~ /sign in/i
+    end
+    
+  end
+  
 end
